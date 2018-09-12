@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:http/http.dart' as http;
 import 'package:heroapp/pokemon.dart';
+import 'package:heroapp/pokedetail.dart';
 import 'dart:convert';
 
 void main() {
@@ -57,7 +58,12 @@ class HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.all(5.0),
                       child: InkWell(
                         onTap: () {
-                          print("Tapped on");
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => PokeDetail(
+                                        pokemon: poke,
+                                      )));
                         },
                         child: Card(
                           child: Column(children: <Widget>[
